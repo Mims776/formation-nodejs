@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compiler:typescript": "npx tsc --watch"
-  }
-,
+    "compiler:watch": "npx tsc --watch",
+    "nodemon:watch": "npx nodemon -r dotenv/config dist/index.js",
+    "start": "npx concurrently npm:compiler:watch npm:nodemon:watch"
+ 
+
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mims776/formation-nodejs.git"
@@ -20,6 +23,12 @@
   "homepage": "https://github.com/Mims776/formation-nodejs#readme",
   "devDependencies": {
     "@types/node": "^18.14.2",
-    "typescript": "^4.9.5"
+    "concurrently": "^7.6.0",
+    "typescript": "^4.9.5",
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
+   
   }
 }
